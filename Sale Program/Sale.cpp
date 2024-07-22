@@ -10,7 +10,7 @@ Sale::Sale()
 
 Sale::Sale(vector<string> orders, float total)
 {
-	this->id = 001;
+	this->id = GenerateId();
 	this->time = GetCurrentDateTime();
 	this->total = total;
 	ordersList = orders;
@@ -19,6 +19,15 @@ Sale::Sale(vector<string> orders, float total)
 
 Sale::~Sale()
 {
+}
+
+void Sale::LoadSale(vector<string> orders, float total, string time, int id)
+{
+	ordersList = orders;
+	this->total = total;
+	this->id = id;
+	this->time = time;
+	this->next = nullptr;
 }
 
 string Sale::GetTime()

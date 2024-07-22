@@ -114,6 +114,21 @@ void Menu::RemoveSale(int id)
 	return;
 }
 
+void Menu::LoadSale(vector<string> orders, string time, int id, float total)
+{
+
+	Sale newSale;
+	newSale.LoadSale(orders, total, time, id);
+	Sale* ptr = new Sale(newSale);
+	if (ptr == NULL) {
+		cerr << "Cannot allocate memory" << endl;
+		return;
+	}
+	ptr->next = sale;
+	sale = ptr;
+	return;
+}
+
 float Menu::GetPriceOf(string id)
 {
 	Item* ptr = SearchItem(id);
@@ -191,6 +206,20 @@ void Menu::PrintSale()
 		ptr = ptr->next;
 	}
 	cout << count << " Sales" << endl;
+}
+
+bool Menu::ItemIdVerification(string id)
+{
+	if (item == nullptr) {
+		return true;
+	}
+	Item* ptr = SearchItem(id);
+	if (ptr == nullptr) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 void Menu::ClearMemory()

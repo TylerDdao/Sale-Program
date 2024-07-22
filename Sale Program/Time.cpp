@@ -11,6 +11,7 @@ string GetCurrentDateTime() {
 	return buf;
 }
 
+//Not in used now but for future feartures//
 int ExtractYear(string time) {
 	istringstream dateLine(time);
 	string year;

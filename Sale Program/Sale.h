@@ -19,6 +19,8 @@ public:
 	Sale(vector<string> orders, float total);
 	~Sale();
 
+	void LoadSale(vector<string> orders, float total, string time, int id);
+
 	string GetTime();
 	vector<string> GetOrders();
 	float GetTotal();

@@ -18,6 +18,7 @@ public:
 
 	void AddSale(vector<string> orders); //Done
 	void RemoveSale(int id); // Done
+	void LoadSale(vector<string> orders, string time, int id, float total);
 
 	float GetPriceOf(string id); //Done
 	Item* SearchItem(string id); //Done
@@ -25,6 +26,8 @@ public:
 
 	void PrintItems(); //Done
 	void PrintSale(); //Done
+
+	bool ItemIdVerification(string id);
 
 	void ClearMemory(); //Done
 
