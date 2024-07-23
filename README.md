@@ -44,6 +44,15 @@ If the ID existed, the item with that ID will be printed out, and then system wi
 This feature is for changing `Name`, `ID`, and `Price` of existed item
 `Enter ID: ` Enter ID of the item you want to change.  
 `Enter new name: ` Enter new name of the item.  
-`Enter new ID: ` Enter new ID of the item. **New ID has to be different from the current ID and any other IDs, in future version user can choose either to change ID or not.**  
+`Enter new ID: ` Enter new ID of the item. **New ID has to be different from the current ID and any other IDs.**  
 `Enter new price: $` Enter new price for the item.  
 After all attributes are set, the system will print out new infomations of item, and ask for user's confirmation before changing.
+##### 4. Search Item
+This feature allows user to search for item by its ID. If ID is found, the system will print all infomation of the item.  
+`Enter ID: ` Enter ID of the item you want to search for.  
+##### 5. Print all Items
+This feature doesn't require input from user, it will print all the items in menu.  
+##### 6. Delete all Item
+This feature will delete all items in menu. It provides 2 options, which are save data then delete or delete without saving.  
+- If user choose save then delete option, system will ask for file name **file name has to include file format at the end (.txt/.bin/...).** then the system will ask for user's confirmation and then it will provide the name of file after saving process is done.
+- if user choose delete without saving, system will send a warning and then ask for user's confirmation before deleting process.  
