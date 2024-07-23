@@ -2,9 +2,20 @@
 
 **Table of Content**
 - [Introduction](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#introduction)
+- [Purpose of Project]()
+- [How to Install]()
 - [How to use]()
   - [Config mode]()
--[License]()
+    - [Add Item]()
+    - [Remove Item]()
+    - [Edit Item]()
+    - [Search Item]()
+    - [Print all Items]()
+    - [Delete all Items]()
+  - [Sale mode]()
+ 
+- [Future development]()
+- [License]()
    
 
 ## Introduction
@@ -24,8 +35,8 @@ Config Mode has 7 options.
 2. Remove Item
 3. Edit Item
 4. Search Item
-5. Print all Item
-6. Delete all Item
+5. Print all Items
+6. Delete all Items
 7. Return to Main
 
 #### Attributes of an item
@@ -56,7 +67,7 @@ This feature allows user to search for item by its ID. If ID is found, the syste
 `Enter ID: ` Enter ID of the item you want to search for.  
 #### 5. Print all Items
 This feature doesn't require input from user, it will print all the items in menu.  
-#### 6. Delete all Item
+#### 6. Delete all Items
 This feature will delete all items in menu. It provides 2 options, which are save data then delete or delete without saving.  
 - If user choose save then delete option, system will ask for file name **file name has to include file format at the end (.txt/.bin/...).** then the system will ask for user's confirmation and then it will provide the name of file after saving process is done.
 - if user choose delete without saving, system will send a warning and then ask for user's confirmation before deleting process.
@@ -66,8 +77,8 @@ Sale Mode has 6 options.
 1. New Sale
 2. Remove Sale
 3. Search Sale
-4. Print all Sale
-5. Delete all Sale
+4. Print all Sales
+5. Delete all Sales
 6. Return to Main
 #### Attributes of a sale
 A sale has 4 attributes.  
