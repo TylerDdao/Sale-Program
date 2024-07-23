@@ -1,7 +1,7 @@
 # Sale managing system
 
 ## Table of Content
-1. [Introduction](Introduction)
+1. [Introduction](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#introduction)
 
 ### Introduction
 Introducing the all-in-one Sale Manager program designed to streamline your sales process! This program offers two powerful modes: Config and Sale. In Config mode, take complete control over your menu.  Add, remove, edit, search, and even print any item with ease. When you're ready to start selling, switch to Sale mode. Here, you can add, remove, search, and print sales transactions.  For each confirmed sale, the system automatically generates a unique ID for easy tracking and reference.
