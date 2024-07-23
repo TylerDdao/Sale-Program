@@ -4,6 +4,7 @@
 - [Introduction](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#introduction)
 - [How to use]()
   - [Config mode]()
+-[License]()
    
 
 ## Introduction
@@ -75,3 +76,6 @@ A sale has 4 attributes.
 `orders` is a list of item IDs for the sale.  
 `total` is a total of price of items in orders list.  
 `time` is time when the sale is added to the system.  
+
+## License
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
