@@ -20,6 +20,7 @@ public:
 	~Sale();
 
 	void LoadSale(vector<string> orders, float total, string time, int id);
+	void Print();
 
 	string GetTime();
 	vector<string> GetOrders();

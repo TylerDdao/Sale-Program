@@ -26,19 +26,8 @@ void Menu::AddItem(string name, string id, float price)
 
 void Menu::RemoveItem(string id)
 {
-	if (item == nullptr) {
-		cerr << "Empty" << endl;
-		return;
-	}
-	Item* ptr = item;
-	while (ptr!= nullptr) {
-		if (ptr->GetId() == id) {
-			break;
-		}
-		ptr = ptr->next;
-	}
+	Item* ptr = SearchItem(id);
 	if (ptr == nullptr) {
-		cerr << "ID is not found" << endl;
 		return;
 	}
 	if (ptr == item) {
@@ -72,7 +61,7 @@ void Menu::EditItem(string id, string newName, string newId, float newPrice)
 	return;
 }
 
-void Menu::AddSale(vector<string> orders)
+int Menu::AddSale(vector<string> orders)
 {
 	float total = 0;
 	for (int i = 0; i < orders.size(); i++) {
@@ -82,12 +71,11 @@ void Menu::AddSale(vector<string> orders)
 	Sale newSale(orders, total);
 	Sale* ptr = new Sale(newSale);
 	if (ptr == NULL) {
-		cerr << "Cannot allocate memory" << endl;
-		return;
+		return -1;
 	}
 	ptr->next = sale;
 	sale = ptr;
-	return;
+	return ptr->GetId();
 }
 
 void Menu::RemoveSale(int id)
@@ -104,6 +92,7 @@ void Menu::RemoveSale(int id)
 	if (ptr == sale) {
 		sale = ptr->next;
 		delete ptr;
+		return;
 	}
 	Sale* ptr2 = sale;
 	while (ptr2->next != ptr) {
@@ -180,17 +169,29 @@ void Menu::PrintItems()
 	while (ptr != nullptr)
 	{
 		count++;
-		cout << "Name: " << ptr->GetName() << endl;
+		cout <<on_cyan<< "Name: " << ptr->GetName() <<reset<< endl;
 		cout << "ID: " << ptr->GetId() << endl;
 		cout << "Price: $" << ptr->GetPrice() << endl;
-		cout << "********************" << endl;
+		cout << "**********" << endl;
 		ptr = ptr->next;
 	}
 	cout << count << " Items" << endl;
 	return;
 }
 
-void Menu::PrintSale()
+void Menu::PrintItem(string id)
+{
+	Item* ptr = SearchItem(id);
+	if (ptr == nullptr) {
+		return;
+	}
+	cout <<on_cyan<< "Name: " << ptr->GetName()<<reset << endl;
+	cout << "ID: " << ptr->GetId() << endl;
+	cout << "Price: $" << ptr->GetPrice() << endl;
+	return;
+}
+
+void Menu::PrintSales()
 {
 	if (sale == nullptr) {
 		cerr << "Empty" << endl;
@@ -200,12 +201,40 @@ void Menu::PrintSale()
 	int count = 0;
 	while (ptr != nullptr) {
 		count++;
-		cout << "Sale ID: " << ptr->GetId() << " at " << ptr->GetTime() <<endl;
+		cout <<on_cyan<< "Sale ID: "<< ptr->GetId() << " at " << ptr->GetTime()<<reset <<endl;
 		cout << "Total: $" << ptr->GetTotal() <<endl;
 		cout << "********************" << endl;
 		ptr = ptr->next;
 	}
 	cout << count << " Sales" << endl;
+}
+
+void Menu::PrintSale(int id)
+{
+	Sale* ptr = SearchSale(id);
+	if (ptr == nullptr) {
+		return;
+	}
+	cout << "Items:" << endl;
+	for (int i = 0;i < ptr->GetOrders().size();i++) {
+		PrintItem(ptr->GetOrders()[i]);
+		cout << "**********" << endl;
+	}
+	cout<<on_cyan << ptr->GetOrders().size() << " items" <<reset<< endl;
+	cout <<on_cyan<< "Total: $" << ptr->GetTotal() <<reset<< endl;
+	return;
+}
+
+void Menu::PrintSale(Sale sale)
+{
+	cout << "Items:" << endl;
+	for (int i = 0;i < sale.GetOrders().size();i++) {
+		PrintItem(sale.GetOrders()[i]);
+		cout << "**********" << endl;
+	}
+	cout << sale.GetOrders().size() << " items" << endl;
+	cout <<"Total: $"<< sale.GetTotal() << endl;
+	return;
 }
 
 bool Menu::ItemIdVerification(string id)
@@ -219,6 +248,26 @@ bool Menu::ItemIdVerification(string id)
 	}
 	else {
 		return false;
+	}
+}
+
+void Menu::ClearSales()
+{
+	while (sale != nullptr)
+	{
+		Sale* sPtr = sale;
+		sale = sPtr->next;
+		delete sPtr;
+	}
+}
+
+void Menu::ClearItems()
+{
+	while (item != nullptr)
+	{
+		Item* iPtr = item;
+		item = iPtr->next;
+		delete iPtr;
 	}
 }
 

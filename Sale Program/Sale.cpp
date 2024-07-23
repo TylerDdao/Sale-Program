@@ -30,6 +30,10 @@ void Sale::LoadSale(vector<string> orders, float total, string time, int id)
 	this->next = nullptr;
 }
 
+void Sale::Print()
+{
+}
+
 string Sale::GetTime()
 {
 	return time;
