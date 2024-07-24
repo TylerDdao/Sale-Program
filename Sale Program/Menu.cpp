@@ -202,6 +202,7 @@ void Menu::PrintSales()
 	while (ptr != nullptr) {
 		count++;
 		cout <<on_cyan<< "Sale ID: "<< ptr->GetId() << " at " << ptr->GetTime()<<reset <<endl;
+		cout << ptr->GetOrders().size() << " items" << endl;
 		cout << "Total: $" << ptr->GetTotal() <<endl;
 		cout << "********************" << endl;
 		ptr = ptr->next;
@@ -215,13 +216,14 @@ void Menu::PrintSale(int id)
 	if (ptr == nullptr) {
 		return;
 	}
+	cout << on_cyan << "Sale ID: " << ptr->GetId()<<" at "<<ptr->GetTime() << reset << endl;;
 	cout << "Items:" << endl;
 	for (int i = 0;i < ptr->GetOrders().size();i++) {
 		PrintItem(ptr->GetOrders()[i]);
 		cout << "**********" << endl;
 	}
-	cout<<on_cyan << ptr->GetOrders().size() << " items" <<reset<< endl;
-	cout <<on_cyan<< "Total: $" << ptr->GetTotal() <<reset<< endl;
+	cout<< ptr->GetOrders().size() << " items"<< endl;
+	cout <<"Total: $" << ptr->GetTotal()<< endl;
 	return;
 }
 
@@ -237,6 +239,28 @@ void Menu::PrintSale(Sale sale)
 	return;
 }
 
+void Menu::PrintSaleByTime(int day, int month, int year)
+{
+	if (sale == nullptr) {
+		return;
+	}
+	Sale* ptr = sale;
+	while (ptr!=nullptr)
+	{
+		if (ExtractYear(ptr->GetTime()) == year) {
+			if (ExtractMonth(ptr->GetTime()) == month) {
+				if (ExtractDay(ptr->GetTime()) == day) {
+					cout << on_cyan << "Sale ID: " << ptr->GetId() << " at " << ptr->GetTime() << reset << endl;
+					cout << ptr->GetOrders().size() << " items" << endl;
+					cout << "Total: $" << ptr->GetTotal() << endl;
+					cout << "********************" << endl;
+				}
+			}
+		}
+		ptr = ptr->next;
+	}
+}
+
 bool Menu::ItemIdVerification(string id)
 {
 	if (item == nullptr) {
@@ -249,6 +273,29 @@ bool Menu::ItemIdVerification(string id)
 	else {
 		return false;
 	}
+}
+
+void Menu::EndOfDaySaleSummary()
+{
+	if (sale == nullptr) {
+		return;
+	}
+	string time = GetCurrentDateTime();
+	cout << on_cyan << ExtractDay(time) << "/" << ExtractMonth(time) << "/" << ExtractYear(time) << reset << endl;;
+	int count = 0;
+	float total = 0;
+	Sale* ptr = sale;
+	while (ptr != nullptr) {
+		if (ExtractDay(ptr->GetTime()) == ExtractDay(time) && ExtractMonth(ptr->GetTime()) == ExtractMonth(time) && ExtractYear(ptr->GetTime()) == ExtractYear(time)) {
+			count++;
+			total += ptr->GetTotal();
+		}
+		ptr = ptr->next;
+	}
+	PrintSaleByTime(ExtractDay(time), ExtractMonth(time), ExtractYear(time));
+	cout << "**********" << endl;
+	cout << on_cyan << "Total: $" << total << reset << endl;
+	cout << on_cyan << count<<" sales" << reset << endl;
 }
 
 void Menu::ClearSales()

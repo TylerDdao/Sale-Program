@@ -1,3 +1,5 @@
-Drink 03:03:10.54
-Drink 02:02:13.53
-Drink 01:01:100
+Drink 01:D1:12.43
+Drink 02:D2:34.21
+Drink 03:D3:10.55
+Drink 04:D4:0.93
+Drink 05:D5:100.99

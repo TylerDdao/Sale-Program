@@ -5,7 +5,8 @@
 using namespace std;
 
 bool Confirm(); //Done
-bool Confirm(string message);
+bool Confirm(string message); //Done
 
 void ConfigMode(Menu& menu); //Done
 void SaleMode(Menu& menu); //Done
+void ReportMode(Menu menu);

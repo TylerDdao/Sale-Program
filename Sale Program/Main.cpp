@@ -24,7 +24,8 @@ int main() {
 			SaleMode(menu);
 			break;
 		case 'r':
-			cerr<<on_red << "Fearture being developed..."<<reset << endl;
+			cerr<<on_red << "Fearture being developed, some features may not available!"<<reset << endl;
+			ReportMode(menu);
 			break;
 		case 'd': {
 			if (Confirm("Do you want to save data before deleting") == true) {

@@ -123,7 +123,7 @@ void ConfigMode(Menu& menu)
 			string newId;
 			while (true) {
 				bool idVer;
-				cout << "Enter ID: ";
+				cout << "Enter new ID: ";
 				getline(cin, newId);
 				idVer = menu.ItemIdVerification(newId);
 				if (idVer == true) {
@@ -132,8 +132,15 @@ void ConfigMode(Menu& menu)
 				cerr<<on_red << "ID already exist, try again"<<reset << endl;
 			}
 			float newPrice = 0;
-			cout << "Enter price: $";
+			cout << "Enter new price: $";
 			cin >> newPrice;
+			menu.PrintItem(id);
+			cout << "**********" << endl;
+			cout << "Changing to:" << endl;
+			cout << "**********" << endl;
+			cout << on_cyan << "Name: " << newName << reset << endl;
+			cout << "ID: " << newId << endl;
+			cout << "Price: $" << newPrice << endl;
 			if (Confirm() == true) {
 				menu.EditItem(id, newName, newId, newPrice);
 				cout<<green << "Item changed"<<reset << endl;
@@ -166,11 +173,14 @@ void ConfigMode(Menu& menu)
 			break;
 		case 6: {
 			if (Confirm("Do you want to save data before deleting") == true) {
+				cout << "Enter file name (Including format of file): ";
+				string fileName;
+				getline(cin, fileName);
 				cout << "Saving data...";
-				SaveSales("Items.txt", menu);
+				SaveItems(fileName, menu);
 				cout << "\r";
 				cout << "\x1b[2K";
-				cout << green << "Data saved" << reset << endl;
+				cout << green << "Data saved in: " << reset << on_green << fileName<< reset << endl;
 
 				cout << "Deleting data...";
 				menu.ClearItems();
@@ -310,11 +320,14 @@ void SaleMode(Menu& menu)
 		}
 		case 5: {
 			if (Confirm("Do you want to save before deleting") == true) {
+				cout << "Enter file name (Including format of file): ";
+				string fileName;
+				getline(cin, fileName);
 				cout << "Saving data...";
-				SaveSales("Sales.txt", menu);
+				SaveSales(fileName, menu);
 				cout << "\r";
 				cout << "\x1b[2K";
-				cout << green << "Data saved" << reset << endl;
+				cout << green << "Data saved in " << reset << on_green << fileName << reset << endl;
 
 				cout << "Deleting data...";
 				menu.ClearSales();
@@ -342,6 +355,29 @@ void SaleMode(Menu& menu)
 			return;
 		default:
 			cerr<<on_red << "Invalid option, try again"<<reset << endl;
+			break;
+		}
+	}
+}
+
+void ReportMode(Menu menu)
+{
+	while (true)
+	{
+		int option;
+		ReportUI();
+		cin >> option;
+		cin.ignore();
+		switch (option)
+		{
+		case 1: {
+			menu.EndOfDaySaleSummary();
+			break;
+		}
+		case 4:
+			return;
+		default:
+			cerr << on_red << "Invalid option, try again" << reset << endl;
 			break;
 		}
 	}

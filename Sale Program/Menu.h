@@ -30,7 +30,10 @@ public:
 	void PrintSales(); //Done
 	void PrintSale(int id); //Done
 	void PrintSale(Sale sale); //Done
+	void PrintSaleByTime(int day, int month, int year);
 	bool ItemIdVerification(string id); //Done
+
+	void EndOfDaySaleSummary(); //Done but haven't released
 
 	void ClearSales(); //Done
 	void ClearItems(); //Done
