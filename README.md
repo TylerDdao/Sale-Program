@@ -34,6 +34,9 @@ I made this project to improve my coding skills, this progam is 100% made by C++
 - Use of vectors
 - Singly linked list implementations and operations  
 ## How to install
+To install, there are 2 ways:  
+- Clone this repo to your local then open ".../Sale Proram/Sale Program.sln"
+- Download zip file then unzip file -> open ".../Sale Proram/Sale Program.sln"
 ## How to use
 - To enter config mode, type `c` to command line and then the system will show options for config mode, allows you to take control completely your menu.
 - Just like when you enter config mode, with sale mode, type `s` to command line.
