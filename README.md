@@ -2,25 +2,32 @@
 
 **Table of Content**
 - [Introduction](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#introduction)
-- [Purpose of Project]()
-- [How to Install]()
-- [How to use]()
-  - [Config mode]()
-    - [Add Item]()
-    - [Remove Item]()
-    - [Edit Item]()
-    - [Search Item]()
-    - [Print all Items]()
-    - [Delete all Items]()
-  - [Sale mode]()
- 
-- [Future development]()
-- [License]()
+- [Purpose of Project](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#purpose-of-project)
+- [How to Install](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#how-to-install)
+- [How to use](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#how-to-use)
+  - [Config mode](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#config-mode)
+    - [Attributes of an item](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#attributes-of-an-item)
+    - [1. Add Item](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#1-add-item)
+    - [2. Remove Item](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#2-remove-item)
+    - [3. Edit Item](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#3-edit-item)
+    - [4. Search Item](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#4-search-item)
+    - [5. Print all Items](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#5-print-all-items)
+    - [6. Delete all Items](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#6-delete-all-items)
+  - [Sale mode](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#sale-mode)
+    - [Attributes of a sale](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#attributes-of-a-sale)
+    - [1. New Sale](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#1-new-sale)
+    - [2. Remove Sale](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#2-remove-sale)
+    - [3. Search Sale](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#3-search-sale)
+    - [4. Print all Sales](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#4-print-all-sales)
+    - [5. Delete all Sales](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#5-delete-all-sales)
+- [Future development](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#future-development)
+- [License](https://github.com/TylerDdao/Sale-Program/tree/master?tab=readme-ov-file#license)
    
 
 ## Introduction
 Introducing the all-in-one Sale Manager program designed to streamline your sales process! This program offers two powerful modes: Config and Sale. In Config mode, take complete control over your menu.  Add, remove, edit, search, and even print any item with ease. When you're ready to start selling, switch to Sale mode. Here, you can add, remove, search, and print sales transactions.  For each confirmed sale, the system automatically generates a unique ID for easy tracking and reference.
-
+## Purpose of Project
+## How to install
 ## How to use
 - To enter config mode, type `c` to command line and then the system will show options for config mode, allows you to take control completely your menu.
 - Just like when you enter config mode, with sale mode, type `s` to command line.
@@ -87,11 +94,22 @@ A sale has 4 attributes.
 `orders` is a list of item IDs for the sale.  
 `total` is a total of price of items in orders list.  
 `time` is time when the sale is added to the system.  
-#### New Sale  
+#### 1. New Sale  
 When you get a order from a customer, you need to add sale to the system.  
 `Enter item ID: ` Enter item ID to add to sale.  
 After item is added to sale, system will ask if user wants to add more item. If not user needs to confirm before the sale is added to system and user receives sale ID.  
-#### Remove Sale
-
+#### 2. Remove Sale
+This feature allows user to remove sale from system.  
+`Enter ID: ` Enter sale ID to find the sale you want to remove from the system.  
+Before removing, system will print the sale information and ask for confirmation.  
+#### 3. Search Sale
+`Enter ID: ` Enter sale ID to search for the sale with the ID.  
+If the sale is found, its infomation will be printed out.  
+#### 4. Print all Sale
+This feature doesn't require any input, if there is any sale is in the system, its infomation will be printed out.  
+#### 5. Delete all Sale
+This feature will delete all sales in the system. It provides 2 options, which are save data then delete or delete without saving.  
+- If user choose save then delete option, system will ask for file name **file name has to include file format at the end (.txt/.bin/...).** then the system will ask for user's confirmation and then it will provide the name of file after saving process is done.
+- if user choose delete without saving, system will send a warning and then ask for user's confirmation before deleting process.
 ## License
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
