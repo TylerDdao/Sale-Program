@@ -87,6 +87,11 @@ A sale has 4 attributes.
 `orders` is a list of item IDs for the sale.  
 `total` is a total of price of items in orders list.  
 `time` is time when the sale is added to the system.  
+#### New Sale  
+When you get a order from a customer, you need to add sale to the system.  
+`Enter item ID: ` Enter item ID to add to sale.  
+After item is added to sale, system will ask if user wants to add more item. If not user needs to confirm before the sale is added to system and user receives sale ID.  
+#### Remove Sale
 
 ## License
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
