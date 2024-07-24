@@ -27,6 +27,12 @@
 ## Introduction
 Introducing the all-in-one Sale Manager program designed to streamline your sales process! This program offers two powerful modes: Config and Sale. In Config mode, take complete control over your menu.  Add, remove, edit, search, and even print any item with ease. When you're ready to start selling, switch to Sale mode. Here, you can add, remove, search, and print sales transactions.  For each confirmed sale, the system automatically generates a unique ID for easy tracking and reference.
 ## Purpose of Project
+I made this project to improve my coding skills, this progam is 100% made by C++:  
+- Use of pointers
+- OOP code
+- Use of classes
+- Use of vectors
+- Singly linked list implementations and operations  
 ## How to install
 ## How to use
 - To enter config mode, type `c` to command line and then the system will show options for config mode, allows you to take control completely your menu.
@@ -111,5 +117,10 @@ This feature doesn't require any input, if there is any sale is in the system, i
 This feature will delete all sales in the system. It provides 2 options, which are save data then delete or delete without saving.  
 - If user choose save then delete option, system will ask for file name **file name has to include file format at the end (.txt/.bin/...).** then the system will ask for user's confirmation and then it will provide the name of file after saving process is done.
 - if user choose delete without saving, system will send a warning and then ask for user's confirmation before deleting process.
+## Future Development
+In further version, some new feature would be added.  
+- Report mode: Report mode allows user to see summary of sale in a day, months or year as long as the sale data is still saved in the system.  
+- Search for item by name: This will be another option for searching for item, it allows user to search for item by its name instead of item ID.
+- Add item to sale by name: It allows user to add item to sale by item's name instead of ID.  
 ## License
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
