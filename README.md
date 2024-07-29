@@ -124,6 +124,7 @@ This feature will delete all sales in the system. It provides 2 options, which a
 In further version, some new feature would be added.  
 - Report mode: Report mode allows user to see summary of sale in a day, months or year as long as the sale data is still saved in the system.  
 - Search for item by name: This will be another option for searching for item, it allows user to search for item by its name instead of item ID.
-- Add item to sale by name: It allows user to add item to sale by item's name instead of ID.  
+- Add item to sale by name: It allows user to add item to sale by item's name instead of ID.
+- Graphic User Experience.  
 ## License
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
